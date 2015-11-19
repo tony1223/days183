@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "json-loader": "^0.5.3",
+    "jsx-loader": "^0.13.2",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

@@ -1,0 +1,29 @@
+body{
+	background-color: #333;
+	color: #fff;
+	font-family: 'Consolas';
+}
+
+.app{
+	line-height: 30px;
+}
+
+label{
+	cursor: pointer;
+}
+
+button{
+	&.active{
+		background-color: #66f;
+	}
+	&.deactive{
+		background-color: #333;
+	}
+	&.enabled{
+
+	}
+	&.disabled{
+		pointer-events: none;
+		background-color: #f99;
+	}
+}
