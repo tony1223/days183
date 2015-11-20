@@ -31,15 +31,18 @@ module.exports = {
 
 
 	output: {
-		path: __dirname + '/dist',
+		path: __dirname + '/',
+		// path: __dirname + '/dist',
 		publicPath: '',
-		filename: 'js/[name].js',
+		filename: 'bundle.js',
+		// filename: 'js/[name].js',
 		chunkFilename: "[chunkhash].js"
 	},
 
 
 	devServer: {
-		contentBase: './dist',
+		contentBase: './',
+		// contentBase: './dist',
 		// publicPath: __dirname + '/',
 		noInfo: true,
 		stats: {

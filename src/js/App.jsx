@@ -1,6 +1,5 @@
 require('../css/App.scss')
 require('../index.html')
-require('../css/bootstrap.min.css')
 
 console.clear();
 
