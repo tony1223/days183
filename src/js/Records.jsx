@@ -79,7 +79,7 @@ function calcRecord(r,rt){
 
 	//記錄時點是否符合資格
 	r.qualified = getDepDays(rt) < 183;
-
+	r.rt=rt;
 
 	if(r.qualified != r.dep){
 		//記錄時已符合資格, 且記錄為入境
@@ -254,6 +254,16 @@ var Records = React.createClass({
 		calcRecords(rr);
 		if(rr.length>0){
 			var lastQualified = !rr[0].qualified;
+
+			var conflict = false;
+			if(rr.length>0){
+				var depFlag=rr[0].dep;
+				conflict = rr.some(function(r,i){
+					//與第一項作 XOR, 應該奇數列為0, 偶數列為1
+					//偶數列反轉, 應該最後為全0, 有1就是衝突
+					return r.dep^depFlag^(i%2) !=0;
+				})
+			}
 		}
 		return(
 			<div className='records'>
@@ -271,6 +281,7 @@ var Records = React.createClass({
 							/>
 					);
 				}.bind(this))}
+				{conflict?<span className='conflict'>出入境記錄有衝突</span>:''}
 			</div>
 		);
 	}

@@ -90,31 +90,21 @@ var App = React.createClass({
 	*/
 	render:function(){
 		var hashURL = window.location.origin+window.location.pathname+'#'+this.state.hash;
-
-		var rr = this.state.records;
-		var conflict = false;
-		if(rr.length>0){
-			var depFlag=rr[0].dep;
-			conflict = rr.some(function(r,i){
-				//與第一項作 XOR, 應該奇數列為0, 偶數列為1
-				//偶數列反轉, 應該最後為全0, 有1就是衝突
-				return r.dep^depFlag^(i%2) !=0;
-			})
-		}
-
 		return(
 			<div className='app'>
-				<h2>出入境紀錄</h2>
-				日期格式: 1030602<br/>
+				<h1>1 8 3</h1>
 
 				<Inputs addRecord={this.addRecord}/>
+				日期格式: 1030602<br/>
 
 
 				<Records
-					records={rr}
+					records={this.state.records}
 					removeRecord={this.removeRecord}
 					toggleRecord={this.toggleRecord}
 					/>
+
+				<br/>
 
 				{this.state.hash==''?null:
 					<div>
@@ -122,7 +112,6 @@ var App = React.createClass({
 					</div>
 				}
 				<br/>
-				{conflict?'出入境記錄有衝突':''}
 				<br/>
 				<div className='tips'>
 					<p>
