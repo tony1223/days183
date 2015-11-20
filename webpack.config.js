@@ -25,20 +25,17 @@ module.exports = {
 
 	context: path.resolve(__dirname,'src'),
 	entry: {
-		app:    [ path.resolve(__dirname,'src/js/App.jsx')],
+		app:    [ path.resolve(__dirname,'src/js/App.cjsx')],
+		// app:    [ path.resolve(__dirname,'src/js/App.jsx')],
 
 		// vendors: ['react','react-dom','jquery']
 	},
 
 
 	output: {
+		// path: path.resolve(__dirname,'dist'),
 		path: path.resolve(__dirname),
-		// path: __dirname + '/dist',
-		// publicPath: path.resolve(__dirname),
 		filename: 'bundle.js',
-		// filename: path.resolve(__dirname, 'bundle.js'),
-		// filename: 'js/[name].js',
-		// chunkFilename: "[chunkhash].js"
 	},
 
 
@@ -46,7 +43,7 @@ module.exports = {
 		contentBase: './',
 		// contentBase: './dist',
 		// publicPath: './',
-		noInfo: true,
+		// noInfo: true,
 		stats: {
 			colors: true
 		},
@@ -73,6 +70,12 @@ module.exports = {
 			loader: 'jsx',
       // include:  __dirname + 'src/js'
 
+		}, {
+			test: /\.cjsx$/,
+			loaders: ['coffee','cjsx'],
+		}, {
+			test: /\.coffee$/,
+			loaders: ['coffee'],
 		}, {
 			test: /\.json$/,
 			loader: 'json',

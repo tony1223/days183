@@ -66,7 +66,10 @@ gulp.task("webpack-dev-server", function(callback) {
 	myConfig.devtool = "eval";
 	myConfig.debug = true;
 
-	new webpackDevServer(webpack(myConfig), webpackConfig.devServer)
+	var serverConfig = Object.create(webpackConfig.devServer);
+	serverConfig.contentBase = myConfig.path;
+
+	new webpackDevServer(webpack(myConfig), serverConfig)
 	.listen(3000, "localhost", function(err) {
 		if(err) throw new gulpUtil.PluginError("webpack-dev-server", err);
 		gulpUtil.log("[webpack-dev-server]", "http://localhost:3000/webpack-dev-server/index.html");
