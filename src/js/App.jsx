@@ -123,6 +123,7 @@ var App = React.createClass({
 				}
 				<br/>
 				{conflict?'出入境記錄有衝突':''}
+				<br/>
 				<div className='tips'>
 					<p>
 						輸入框中<br/>
@@ -135,6 +136,10 @@ var App = React.createClass({
 						Ctrl-點擊記錄的移除標記可略過確認框
 					</p>
 				</div>
+				<br/>
+				<a href="https://github.com/scars377/days183" style={{fontSize:'12px'}} target="_blank">
+					https://github.com/scars377/days183
+				</a>
 			</div>
 		);
 	}
