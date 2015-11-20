@@ -137,7 +137,6 @@ function calcRecords(rr){
 	if(conflict) return rr;
 
 
-
 	//以出入境紀錄算出在境/離境區間
 	var rt=[];
 	for(var i=0;i < rr.length-1;i++){
@@ -148,6 +147,7 @@ function calcRecords(rr){
 		})
 	}
 	//在最前面插入一整年的區間
+	//例如第一筆資料是出境，就當作在這之前都是在境
 	rt.unshift({
 		dep:!rr[0].dep,
 		days:365
@@ -264,6 +264,9 @@ var Records = React.createClass({
 					return r.dep^depFlag^(i%2) !=0;
 				})
 			}
+			//前面也有偵測衝突，應該可精簡
+
+
 		}
 		return(
 			<div className='records'>

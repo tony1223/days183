@@ -8,6 +8,8 @@ var serializer = require('RecordsSerializer.js')
 
 console.clear();
 
+
+
 /*
  █████  ██████  ██████
 ██   ██ ██   ██ ██   ██

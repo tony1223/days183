@@ -58,7 +58,7 @@ var Inputs = React.createClass({
 				break;
 
 			default:
-				console.log(e.keyCode);
+				// console.log(e.keyCode);
 		}
 	},
 	addRecord:function(){
