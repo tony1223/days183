@@ -7,7 +7,7 @@ input[type='text']{
 	font-family: $font-family;
 	margin: 0 12px 0 16px;
 	width:150px;
-	@media (max-width: 960px){
+	@media (max-width: 768px){
 		font-size: 14px;
 		width:100px;
 	}
@@ -22,7 +22,7 @@ button{
 	cursor: pointer;
 	border-radius: 6px;
 
-	@media (max-width: 960px){
+	@media (max-width: 768px){
 		font-size: 12px;
 	}
 

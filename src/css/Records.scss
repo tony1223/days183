@@ -1,6 +1,37 @@
+.records{
+	position:relative;
+	width:460px;
+	border: 3px solid #666;
+	display: inline-block;
+	margin: 32px 0;
+	text-align: left;
+	@media (max-width: 768px){
+		border-width:1px;
+		width: 316px;
+	}
+
+}
+
+
+/*
+██████  ███████  ██████  ██████  ██████  ██████
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██
+██████  █████   ██      ██    ██ ██████  ██   ██
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██
+██   ██ ███████  ██████  ██████  ██   ██ ██████
+*/
 .record{
 	font-size: 18px;
 	position: relative;
+	width:100%;
+	padding: 4px 16px;
+	box-sizing: border-box;
+	@media (max-width: 768px){
+		font-size: 16px;
+		padding: 8px;
+		line-height: 22px;
+		text-align: center;
+	}
 
 	&.dep{
 		background-color: #3a3333;
@@ -18,8 +49,16 @@
 		vertical-align: middle;
 	}
 
+
+	/*
+	██████   █████  ████████ ███████
+	██   ██ ██   ██    ██    ██
+	██   ██ ███████    ██    █████
+	██   ██ ██   ██    ██    ██
+	██████  ██   ██    ██    ███████
+	*/
 	.date{
-	margin-left: 8px;
+		margin-right: 12px;
 	}
 
 	.dep,
@@ -31,10 +70,13 @@
 		border-radius: 4px;
 		color:#000;
 		cursor: pointer;
-
-		&:before{
-
+		margin-right: 12px;
+		@media (max-width: 768px){
+			width:30px;
+			height: 18px;
+			line-height: 18px;
 		}
+
 	}
 	.dep{
 		background-color: #f99;
@@ -49,20 +91,35 @@
 		}
 	}
 
-
+	/*
+	 ██████ ██       ██████  ███████ ███████
+	██      ██      ██    ██ ██      ██
+	██      ██      ██    ██ ███████ █████
+	██      ██      ██    ██      ██ ██
+	 ██████ ███████  ██████  ███████ ███████
+	*/
 	&.conflict>.close{
 		border:1px solid #fff;
 	}
 	.close{
 		width: 14px;
 		height:14px;
-		margin-left:14px;
+		margin-right:16px;
 		border:1px solid transparent;
 		border-radius: 50%;
 		background-color: #c44;
 		cursor: pointer;
 		display: inline-block;
 		position: relative;
+		opacity: .3;
+		&:hover{
+			opacity: 1;
+		}
+
+		@media (max-width: 768px){
+			opacity: 1;
+			margin-right: 8px;
+		}
 		&:before{
 			width: 8px;
 			height: 2px;
@@ -81,14 +138,18 @@
 
 
 	.qualify{
-		position: absolute;
-		top:3px;
-		left:50%;
-		margin-left: 90px;
+		display: inline-block;
 		font-size: 14px;
+		@media (max-width: 768px){
+			font-size: 12px;
+			display: block;
+		}
+		>span{
+			display: inline-block;
+			vertical-align: middle;
+		}
 
 		.status{
-			// margin-right: 20px;
 			&:after{
 				content:'不符合資格';
 			}

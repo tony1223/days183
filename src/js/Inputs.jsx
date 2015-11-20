@@ -44,20 +44,21 @@ var Inputs = React.createClass({
 			case 13://enter
 				if(this.state.enabled) this.addRecord()
 				break;
-			case 81: // q
+			case 81: // Q
 			case 109: //-
 				this.setState({dep:true});
 				break;
-			case 87: // w
+			case 87: // W
 			case 107: //+
 				this.setState({dep:false});
 				break;
+			case 69:  // E
 			case 111:  // /
 				this.setState({dep:!this.state.dep})
 				break;
 
 			default:
-				// console.log(e.keyCode);
+				console.log(e.keyCode);
 		}
 	},
 	addRecord:function(){

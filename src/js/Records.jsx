@@ -194,8 +194,10 @@ var Record = React.createClass({
 	toggleRecord:function(){
 		this.props.toggleRecord(this.props.idx);
 	},
-	removeRecord:function(){
-		this.props.removeRecord(this.props.idx);
+	removeRecord:function(e){
+		if(e.ctrlKey || confirm('確定刪除這筆 '+toDateString(this.props.record.date)+' 的資料?')){
+			this.props.removeRecord(this.props.idx);
+		}
 	},
 	render:function(){
 		var r = this.props.record;
@@ -227,9 +229,9 @@ var Record = React.createClass({
 
 		return(
 			<div className={divCN}>
-				<span className={spanCN} onClick={this.toggleRecord}/>
-				<span className='date'>{toDateString(r.date)}</span>
 				<span className='close'  onClick={this.removeRecord}/>
+				<span className='date'>{toDateString(r.date)}</span>
+				<span className={spanCN} onClick={this.toggleRecord}/>
 				<div className='qualify'>
 					<span className={statusCN}/>
 					<span className={invertCN}>{toDateString(r.invertDate)}</span>
