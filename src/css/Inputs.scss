@@ -1,0 +1,53 @@
+$font-family: 'Consolas','Microsoft JhengHei';
+
+input[type='text']{
+	vertical-align: middle;
+	padding: 4px;
+	font-size:18px;
+	font-family: $font-family;
+	margin: 0 12px 0 16px;
+	width:150px;
+	@media (max-width: 960px){
+		font-size: 14px;
+		width:100px;
+	}
+}
+
+button{
+	vertical-align: middle;
+	padding: 7px 16px;
+	font-size: 16px;
+	font-family: $font-family;
+	border:none;
+	cursor: pointer;
+	border-radius: 6px;
+
+	@media (max-width: 960px){
+		font-size: 12px;
+	}
+
+	&.dep{
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		background-color: #f99;
+	}
+	&.arr{
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		background-color: #9f9;
+	}
+
+	&.active{
+	}
+	&.deactive{
+		background-color: #666;
+	}
+	&.enabled{
+		background-color: #69c;
+	}
+	&.disabled{
+		pointer-events: none;
+		color: #333;
+		background-color: #666;
+	}
+}

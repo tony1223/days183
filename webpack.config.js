@@ -1,4 +1,5 @@
 var webpack = require("webpack")
+var path = require('path')
 
 
 module.exports = {
@@ -22,28 +23,29 @@ module.exports = {
 		'react-dom': 'ReactDOM'
 	},
 
-	context: __dirname + '/src',
+	context: path.resolve(__dirname,'src'),
 	entry: {
-		app:    [__dirname + '/src/js/App.jsx'],
+		app:    [ path.resolve(__dirname,'src/js/App.jsx')],
 
 		// vendors: ['react','react-dom','jquery']
 	},
 
 
 	output: {
-		path: __dirname + '/',
+		path: path.resolve(__dirname),
 		// path: __dirname + '/dist',
-		publicPath: '',
+		// publicPath: path.resolve(__dirname),
 		filename: 'bundle.js',
+		// filename: path.resolve(__dirname, 'bundle.js'),
 		// filename: 'js/[name].js',
-		chunkFilename: "[chunkhash].js"
+		// chunkFilename: "[chunkhash].js"
 	},
 
 
 	devServer: {
 		contentBase: './',
 		// contentBase: './dist',
-		// publicPath: __dirname + '/',
+		// publicPath: './',
 		noInfo: true,
 		stats: {
 			colors: true
@@ -52,13 +54,14 @@ module.exports = {
 
 	resolve: {
     root: [
-			__dirname + '/src/js',
-			__dirname + '/node_modules'
+			path.resolve(__dirname,'src/js'),
+			path.resolve(__dirname,'src/css'),
+			path.resolve(__dirname,'node_modules'),
 		]
 	},
 	resolveLoader: {
     root: [
-			__dirname + '/node_modules'
+			path.resolve(__dirname,'node_modules')
 		]
 	},
 
