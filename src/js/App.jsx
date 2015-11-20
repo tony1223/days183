@@ -1,6 +1,6 @@
 require('../css/App.scss')
 require('../index.html')
-require('file?name=[path][name].[ext]!../css/bootstrap.min.css')
+require('../css/bootstrap.min.css')
 
 console.clear();
 
@@ -167,7 +167,7 @@ var App = React.createClass({
 		},0)
 
 	},
-	
+
 	getResult:function(){
 		var rr = this.state.records.concat();
 
