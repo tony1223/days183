@@ -1,10 +1,4 @@
-
-
-cx = (o) ->
-	Object.keys(o).filter((k) ->
-		o[k]
-	).join ' '
-
+cx=(o)->(k for k of o when o[k]).join(' ')
 
 toDateString = (d) ->
 	unless d?
@@ -16,6 +10,11 @@ toDateString = (d) ->
 			('0' + d.getDate()).substr(-2)
 		].join('-')
 
+
+getDepDays = (rt) ->
+	rt.reduce (a, b) ->
+    if b.dep then a+b.days else a
+  ,0
 
 getDepDays = (rt) ->
 	rt.reduce (a, b) ->

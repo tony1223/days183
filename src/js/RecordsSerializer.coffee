@@ -32,8 +32,8 @@ module.exports =
 				]
 				d = new Date(year, month, date) #d可能 invalid, 這裡不會有 error, 或許應該要檢查
 				rr.push
-				date: d
-				dep: dep
+					date: d
+					dep: dep
 				i += 2
 		catch err
 		rr

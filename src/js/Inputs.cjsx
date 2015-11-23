@@ -23,6 +23,7 @@ Inputs = React.createClass
 	setDep:(dep)->
 		=>@setState dep:dep
 
+
 	inputChange:(e)->
 		s = e.target.value.replace(/\D/g,'').substr(0,7)
 		enabled = @getDateFromString(s)!=null;

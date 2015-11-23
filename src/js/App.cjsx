@@ -16,10 +16,11 @@ console.clear()
 ██   ██ ██      ██
 ###
 App = React.createClass
-	getInitialState:->{
-		records: []
-		hash: ''
-	}
+	getInitialState:->
+		{
+			records: []
+			hash: ''
+		}
 
 	###
 	██████  ███████  ██████  ██████  ██████  ██████  ███████
