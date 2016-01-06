@@ -96,6 +96,7 @@ var Inputs = React.createClass({
 		var records = [];
 		var that = this;
 
+
 		lines.forEach(function(line){
 			if(line){
 				var tokens = line.split(/[ \t]+/);
@@ -114,11 +115,13 @@ var Inputs = React.createClass({
 							date:that.getDateFromString2(tokens[2]),
 							dep: dep
 						});
+						debugger;
 					}
 				}
 				
 			}
 		});
+
 
 		this.props.setRecords(records);
 
@@ -131,7 +134,6 @@ var Inputs = React.createClass({
 		ReactDOM.findDOMNode(this.refs.input).focus();
 	},
 	render:function(){
-
 		return(
 			<div>
 				<h2>移民署格式匯入（承辦作業專用）</h2>

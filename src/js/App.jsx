@@ -39,9 +39,6 @@ var App = React.createClass({
 	addRecord:function(r){
 		var rr = this.state.records;
 		rr.push(r);
-		rr.sort(function(r1,r2){
-			return r1.date.getTime()-r2.date.getTime()
-		});
 		this.setRecords(rr);
 	},
 	removeRecord:function(idx){
@@ -57,6 +54,9 @@ var App = React.createClass({
 
 
 	setRecords:function(rr){
+		rr = rr.sort(function(r1,r2){
+			return r1.date.getTime()-r2.date.getTime()
+		});		
 		var hash = serializer.stringify(rr);
 		window.location.hash=hash;
 		this.setState({
@@ -92,7 +92,6 @@ var App = React.createClass({
 	*/
 	render:function(){
 		var hashURL = window.location.origin+window.location.pathname+'#'+this.state.hash;
-
 		return(
 			<div className='app'>
 				<h1>1 8 3</h1>
