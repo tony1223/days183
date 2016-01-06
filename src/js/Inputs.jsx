@@ -132,11 +132,10 @@ var Inputs = React.createClass({
 	},
 	render:function(){
 
-				var val = "項次 入出 日期 班機號碼 港口 入出境證號 護照號碼 國籍 查驗時間 \n1 入境  20151019 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n2 出境  20150817 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n3 入境  20150807 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx\n4 出境  20150511 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n5 入境  20150430 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n6 出境  20150302 xxxxxx oooooooo  xxxxxxxx oooooo ROC  xxxxxxxxxxx \n7 入境  20150210 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n8 入境  20150112 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n9 出境  20141013 xxxxx oooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx \n10 入境  20140802 xxxxx ooooooo  xxxxxxxxxxxx ooooooooo ROC  xxxxxxxxxxxx ";
 		return(
 			<div>
 				<h2>移民署格式匯入（承辦作業專用）</h2>
-				<textarea ref="import" onChange={this.importFromText} style={{width:"60%",height:"200px"}} >{val}</textarea>
+				<textarea ref="import" onChange={this.importFromText} style={{width:"60%",height:"200px"}} ></textarea>
 
 				<hr />
 
