@@ -92,11 +92,12 @@ var App = React.createClass({
 	*/
 	render:function(){
 		var hashURL = window.location.origin+window.location.pathname+'#'+this.state.hash;
+
 		return(
 			<div className='app'>
 				<h1>1 8 3</h1>
 
-				<Inputs addRecord={this.addRecord}/>
+				<Inputs setRecords={this.setRecords} addRecord={this.addRecord}/>
 				日期格式: 1030602<br/>
 
 
