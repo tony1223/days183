@@ -903,6 +903,9 @@
 
 			//最前區間-1 最後區間+1 while到 qualified 反轉為止
 			do{
+				if(rt[0].days == 0){  //for edge case rt[0].days == 0 cause infinite loop
+				    rt.shift();
+				}
 				rt[0].days-=1;
 				if(rt[0].days==0) rt.shift()
 				lastDur.days+=1;
